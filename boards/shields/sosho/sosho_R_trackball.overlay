@@ -39,6 +39,12 @@ https://zmk.dev/docs/keymaps/input-processors
 		layers = <1>;
 		input-processors = <&zip_xy_to_scroll_mapper>;
 	};
+
+	//Layer3のときだけトラックボールを1/3速度の精密モードにする
+	precision {
+		layers = <3>;
+		input-processors = <&zip_xy_scaler 1 3>;
+	};
 };
 
 &glidepoint_split { status = "okay"; };
