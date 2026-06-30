@@ -41,9 +41,10 @@ https://zmk.dev/docs/keymaps/input-processors
 	};
 
 	//Layer3のときだけトラックボールを1/3速度の精密モードにする
+	//子ノードは親のinput-processorsを置き換えるため、反転(zip_xy_transform)も明示的に再指定する
 	precision {
 		layers = <3>;
-		input-processors = <&zip_xy_scaler 1 3>;
+		input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 1 3>;
 	};
 };
 
