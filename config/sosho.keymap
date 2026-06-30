@@ -50,6 +50,41 @@
             bindings = <&mkp MCLK>;
         };
 
+		//K(20)+M(31) → Ctrl+Shift+Tab（タブ前移動）
+        combo_prev_tab {
+            timeout-ms = <50>;
+            key-positions = <20 31>;
+            bindings = <&kp LC(LS(TAB))>;
+        };
+
+		//K(20)+.(33) → Ctrl+Tab（タブ次移動）
+        combo_next_tab {
+            timeout-ms = <50>;
+            key-positions = <20 33>;
+            bindings = <&kp LC(TAB)>;
+        };
+
+		//M(31)+,(32) → Mouse Button 4（戻る）
+        combo_mb4 {
+            timeout-ms = <50>;
+            key-positions = <31 32>;
+            bindings = <&mkp MB4>;
+        };
+
+		//.(33)+,(32) → Mouse Button 5（進む）
+        combo_mb5 {
+            timeout-ms = <50>;
+            key-positions = <33 32>;
+            bindings = <&mkp MB5>;
+        };
+
+		//K(20)+,(32)+M(31) → Ctrl+W（タブを閉じる）3キーコンボ
+        combo_close_tab {
+            timeout-ms = <60>;
+            key-positions = <20 32 31>;
+            bindings = <&kp LC(W)>;
+        };
+
     };
 };
 
