@@ -44,7 +44,8 @@ https://zmk.dev/docs/keymaps/input-processors
 &glidepoint_split { status = "okay"; };
 &glidepoint_split_listener {
     status = "okay";
-	//input-processors = <&zip_xy_scaler 2 1>;
+	//左手トラックパッドを2Dスクロール専用面にする
+	input-processors = <&zip_xy_to_scroll_mapper>;
 };
 
 &trackball_split { status = "okay"; };
