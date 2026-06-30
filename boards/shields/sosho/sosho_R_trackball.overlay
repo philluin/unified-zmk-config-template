@@ -44,8 +44,9 @@ https://zmk.dev/docs/keymaps/input-processors
 &glidepoint_split { status = "okay"; };
 &glidepoint_split_listener {
     status = "okay";
-	//左手トラックパッドを縦スクロール専用にする（X軸を0倍で潰してから縦横スクロールに変換）
-	input-processors = <&zip_x_scaler 0 1>, <&zip_xy_to_scroll_mapper>;
+	//左手トラックパッドを縦スクロール専用にする
+	//X軸を0倍で潰す→Y軸を1/2に減速→Y軸を反転→縦横スクロールに変換
+	input-processors = <&zip_x_scaler 0 1>, <&zip_y_scaler 1 2>, <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>, <&zip_xy_to_scroll_mapper>;
 };
 
 &trackball_split { status = "okay"; };
